@@ -3,7 +3,7 @@ The individual, second part of the ME35 midterm involving a temperature sensor, 
 
 This project involves python code simultaneously running on three different machines- the Raspberry Pi Pico, my computer, and OpenCV. The code files are grouped accordingly. 
 
-The Pico code does the most work, and therefore has the most libraries. The file picoMain.py houses an asynchronous loop that trades off between the various simultaneous functions, each of which has a library specifically designed to make that task easier. The tasks and associated libraries are listed here:
+The Pico code does the brunt of the work for this project. I wanted the main loop to be as streamlined and easy to read as possible, so I made several libraries to outsource the complicated processes. The file picoMain.py houses an asynchronous loop that trades off between the various simultaneous functions, each of which has a library specifically designed to make that task easier. The tasks and associated libraries are listed here:
 - Reading thermistor (no library)
 - Reading i2c Gyroscope values (AccelLib.py)
 - Requesting color data from the Airtable API (AirtableLib.py)
