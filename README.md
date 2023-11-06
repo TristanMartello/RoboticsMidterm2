@@ -10,7 +10,7 @@ The Pico code does the brunt of the work for this project. I wanted the main loo
 - Sending color data through MQTT to the Adafruit Dashboard (AdaMqttLib.py)
 - Creating and updating the i2c OLED display screen (i2cScreen.py)
 
-This is a bunch of different tasks for the Pico to do, but the control flow is simple, the program starts an asynchronous loop that cycles through all of the tasks at their respective rates. The main current problem with this code is that the Airtable requests take significantly longer than any other subtask, so whenever that communication is happening all other functions slow down.
+This is a bunch of different tasks for the Pico to do, but the control flow is simple: the program starts an asynchronous loop that cycles through all of the tasks at their respective rates. The main current problem with this code is that the Airtable requests take significantly longer than any other subtask, so whenever that communication is happening all other functions slow down.
 
 
 The openCV code is more straightforward, the only helper function is to run a color isolation algorithm on a grayscale image to differentiate bright values of a single color, and bright values of all colors. The program runs this isolation function for each of the main rgb colors, determines the most prominent one, and updates the Airtable cell with that value.
